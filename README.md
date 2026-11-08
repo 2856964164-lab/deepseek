@@ -22,10 +22,10 @@
 
 ## 安装
 
-这个包**没有发布到 npm**，请按 GitHub 仓库安装。把 `<owner>` 换成仓库所属的 GitHub 用户名，`<40 位 commit>` 换成仓库里的完整 commit SHA（`git rev-parse HEAD`）：
+这个包**没有发布到 npm**，请按 GitHub 仓库安装。`<40 位 commit>` 换成本仓库的完整 commit SHA（`git rev-parse HEAD`）：
 
 ```sh
-dsh plugin --profile web add "github:<owner>/dsh-skin-android-boot#<40 位 commit>"
+dsh plugin --profile web add "github:2856964164-lab/deepseek#<40 位 commit>"
 ```
 
 装完在「设置 → 外观」里切换深色/浅色，皮肤会自动跟随。
@@ -40,8 +40,10 @@ dsh plugin --profile web remove dsh-skin-android-boot
 
 ## 兼容性
 
-- DSH Web **0.1.0** 及以上（依赖 `theme.overrideTokens` 与 `conversation.hero.brand.mark` 插槽，两者在 0.1.0 已存在）。
+- 需要 DSH Web `^0.1.0-rc.6`（基于 0.1.0-rc.8 实测）。依赖两个宿主能力：`theme.overrideTokens` 与 `conversation.hero.brand.mark` 插槽，两者在 0.1.0-rc.6 起提供。
 - 仅 `web` 平台，不适用于其他宿主。
+
+> 如果用的版本比这个新、但皮肤没有生效，通常是宿主改过令牌名或插槽名。先确认 `dsh --version`，再对照 `client.js` 里的 `TOKEN_MAP`。
 
 ## 调色板
 
